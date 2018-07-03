@@ -1,0 +1,46 @@
+body {
+    background-color: #454F4F;
+}
+h1 {
+    font-family: 'Rammetto One', cursive;
+    text-align: center;
+    color: white;  
+}
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    padding: 10px; 
+}
+#gridContainer {
+    text-align: center;
+}
+.grid-item  {
+    border: 1px solid;
+    padding: 20px;
+    color: lightgrey;
+    font-size: 10px;
+    text-align: center;
+}
+.btn {
+    background-color: #D11149;
+}
+#newGameBtn {
+    text-align: center;
+    padding: 7px; 
+}
+#moves {
+    padding: 7px;
+    color: white;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 30px;
+}
+.firstColumn {
+    font-family: 'Cabin Condensed', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+.thirdColumn {
+    font-family: 'Cabin Condensed', sans-serif;
+    color: white;
+    font-size: 20px;
+ }
