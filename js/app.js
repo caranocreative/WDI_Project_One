@@ -1,72 +1,75 @@
-$(document).ready(function() {   
     
-    // candidate random colors!
-    colorOptions = ['#537938', '#F9D42C', '#F17105', '#D11149', '#6610F2', '#1A8FE3'];
+const gameBoard = [[], [], [], [], [], [], [], [], [], [], [], []];  
+   
 
-    for(i = 1; i <= 144; i++) {                             
-        let name = "cell" + i;
-        $(".grid-container").append('<div class="grid-item" id="' + name +'"></div>'); 
+$(document).ready(function() {   
 
-        // selecting a random number between zero and the length of our random color array
-        let color = Math.floor(Math.random() * colorOptions.length);
+   class cell {
+        constructor(x, y, id) {
+           this.x = x;
+           this.y = y;
+           this.id = id;
+           this.color = '';
+           
+           this.generateColor();            
+        };
 
+        generateColor () {
+            let colorOptions = ['#537938', '#F9D42C', '#F17105', '#D11149', '#6610F2', '#1A8FE3'];
+            let color = Math.floor(Math.random() * colorOptions.length);
+            this.color = colorOptions[color];
+        }
 
-        // colorOptions[color] = random selection from our color array
-        $("#" + name).css('background-color', colorOptions[color]);
+        setCssColor() {
+            $('#' + this.id).css('background-color', this.color);
+        }
+    };
+ 
 
-        $('#' + name).on('click', function(){
-            console.log("Clicked: " + name);
-        });
+    for(y = 0; y < 12; y++) {
+        for(x = 0; x < 12; x++) {
+            let name = "cell-" + x + "-" + y;
+            $(".grid-container").append('<div class="grid-item" id="' + name +'"></div>');
+            gameBoard[x][y] = new cell(x, y, name);
+            $("#" + name).css('background-color', gameBoard[x][y].color);
+            
+            $('#' + name).on('click', function(){
+                console.log("Clicked: " + name);
+                let selectedCell = findCellById(name);
+
+                if(gameBoard[0][0].color != selectedCell.color) {
+                    
+                    let tmp = gameBoard[0][0].color;
+                    gameBoard[0][0].color = selectedCell.color;
+                    selectedCell.color = tmp;
+
+                }
+
+            });
+
+        }
+    }
+ 
+    const findCellById = (id) => {
+        for(y = 0; y < 12; y++) {
+            for(x = 0; x < 12; x++) {
+                if(gameBoard[x][y].id == id) {
+                    return gameBoard[x][y];
+                }
+            }
+        }
     }
 
 
-    const gameBoard = [[], [], [], [], [], [], [], [], [], [], [], []]; 
-    console.log(gameBoard);
+    $('button').on('click', () => {
+        location.reload();
+    });
 
   
-    class cell {
-        constructor(x, y, color, Id) {
-           this.x = x;
-           this.y = y;
-           this.color = color;
-           this.Id = Id
-            
-        };
-
-        xCoord () {
-            
-        };
-
-        yCoord () {
-
-        };
-
-        sqColor () {
-
-        };
-
-
-    };
-
-
-
-
-
-
-        for(i = 0; i < 11; i++) {
-           for(j = 0; j < 11; j++) {
-              gameBoard[i][j] = new cell(i, j);
-           }
-        }
-
-        for(i = 0; i <= this.x; i++) {
-            for (j = 0; j <= this.y; i++) {
-                console.log(i, j);
-            }
-        };
-
 
 });
+
+
 
 
         
