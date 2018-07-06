@@ -22,7 +22,8 @@ h1 {
     text-align: center;
 }
 .btn {
-    background-color: #D11149;
+    background-color: #D11149;  
+    color: white;
    
 }
 #newGameBtn {
@@ -30,19 +31,26 @@ h1 {
     padding: 7px; 
 }
 #moves {
-    padding: 7px;
+    padding: 3px;
     color: white;
     font-family: 'Cabin Condensed', sans-serif;
     font-size: 30px;
 }
-.firstColumn {
-    font-family: 'Cabin Condensed', sans-serif;
-    color: white;
+
+.btnMod {
     font-size: 20px;
+    font-family: 'Didact Gothic', sans-serif;
+    letter-spacing: 3px;
+    border-radius: 8px;
+    overflow: visible;
+    background-color: transparent; 
+    border: transparent;
+
 }
-.thirdColumn {
-    font-family: 'Cabin Condensed', sans-serif;
+#winLoss {
+    padding: 3px;
     color: white;
-    font-size: 20px;
- }
- 
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 30px;
+}
+
