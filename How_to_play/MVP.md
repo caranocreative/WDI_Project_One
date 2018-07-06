@@ -15,16 +15,16 @@ Flood-It Game
   
   Create game board 12 x 12
   
-  Create buttons to select colors and play game
+  Create buttons to select colors and play game - added but, took off didn't look right or feel right to use - you became distracted looking for the button and not the play area
   
   Create refresh button
   
   Create countdown of clicks / how many clicks left in game
   
-  Create stats
-  
   Create button w/how to play pop up
   
   Alert if player wins or loses
+  
+  Stats not possible at this time because would have to have cookies/have person register etc.
   
   
