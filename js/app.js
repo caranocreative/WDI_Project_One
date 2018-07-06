@@ -55,7 +55,8 @@ $(document).ready(function() {
                         canList = [];
                         score = score - 1;
                         $('#moves').text('Moves: ' + score);
-                        
+                        //$(this).animate(1000).setCssColor();
+
 
                         if(score >= 0 && gameOver() == true ) {
                             $('#winLoss').text('You Win!');
