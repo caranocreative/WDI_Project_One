@@ -25,4 +25,6 @@ Flood-It Game
   
   Alert if player wins or loses
   
+  Stats not possible at this time because would have to have cookies/have person register etc.
+  
   
